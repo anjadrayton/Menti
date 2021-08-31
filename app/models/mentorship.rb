@@ -1,4 +1,4 @@
 class Mentorship < ApplicationRecord
   belongs_to :user
-  has_one :mentorship_application
+  has_many :mentorship_application
 end
