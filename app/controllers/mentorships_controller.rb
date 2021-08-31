@@ -14,7 +14,7 @@ class MentorshipsController < ApplicationController
 
   def create
     @mentorship = Mentorship.new(mentorship_params)
-    @user = User.find(1)
+    @user = User.find(current_user)
     @mentorship.user = @user
     # raise
     if @mentorship.save

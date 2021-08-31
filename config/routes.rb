@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :mentorships do
-    resources :mentorship_applications
+    resources :mentorship_applications, only: [:new, :create]
   end
+
+  resources :mentorship_applications, only: [:edit, :show, :update]
 
   get 'dashboard', to: 'dashboard#dashboard'
 
