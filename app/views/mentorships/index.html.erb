@@ -10,10 +10,6 @@ im going to loop through the variable @mentorships and list them %>
 
 <ul>
   <% @mentorships.each do |mentorship| %>
-    <li><%= mentorship.subject %>
-    <%= link_to 'Delete',
-        mentorship_path(mentorship),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %> </li>
+    <li><%= mentorship.subject %></li>
   <% end %>
 </ul>
