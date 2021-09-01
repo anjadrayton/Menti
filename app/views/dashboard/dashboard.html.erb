@@ -12,6 +12,7 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="mentorships" role="tabpanel" aria-labelledby="mentorships-tab">
     <%= link_to "Create New Mentorship", new_mentorship_path, class: "btn btn-primary" %>
+    <br><br>
     <ul>
       <% @mentorships.each do |mentorship| %>
         <li><%= mentorship.subject %> <%= link_to "View", mentorship_path(mentorship) %> <%= link_to "Edit", edit_mentorship_path(mentorship) %> <%= link_to 'Delete', mentorship_path(mentorship), method: :delete, data: { confirm: "Are you sure?" } %></li>
@@ -21,14 +22,14 @@
   <div class="tab-pane fade" id="created-applications" role="tabpanel" aria-labelledby="created-applications-tab">
     <ul>
       <% @created_applications.each do |application| %>
-        <li><%= application.mentorship.subject %> - <%= application.mentor.first_name %> <%= application.mentor.last_name %> - <%= application.status %></li>
+        <li><%= application.mentorship.subject %> - <%= application.mentor.first_name %> <%= application.mentor.last_name %> - <%= application.status %> <%= link_to "View", mentorship_application_path(application) %> </li>
       <% end %>
     </ul>
   </div>
   <div class="tab-pane fade" id="received-applications" role="tabpanel" aria-labelledby="received-applications-tab">
     <ul>
       <% @received_applications.each do |application| %>
-        <li><%= application.mentorship.subject %> - <%= application.mentor.first_name %> <%= application.mentor.last_name %> - <%= application.status %></li>
+        <li><%= application.mentorship.subject %> - <%= application.user.first_name %> <%= application.user.last_name %> - <%= application.status %> <%= link_to "View", mentorship_application_path(application) %></li>
       <% end %>
     </ul>
   </div>

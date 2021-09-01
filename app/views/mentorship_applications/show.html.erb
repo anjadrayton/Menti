@@ -20,3 +20,5 @@ Details: <%= @application.mentorship.description %>
   <button class = "btn btn-info"><%= link_to "Reject", mentorship_application_path(@application, mentorship_application:{ status: "Denied"}), method: :patch %></button>
 
 <% end %>
+<br>
+<%= link_to "Dashboard", dashboard_path %>
