@@ -3,3 +3,9 @@
 Subject: <%= @mentorship.subject %>
 <br>
 Description: <%= @mentorship.description %>
+<br>
+<% if current_user != @mentorship.user %>
+  <%= link_to "Apply", new_mentorship_mentorship_application_path(@mentorship) %>
+  <br>
+<% end %>
+<%= link_to "Dashboard", dashboard_path %>

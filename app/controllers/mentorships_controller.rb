@@ -1,4 +1,6 @@
 class MentorshipsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @mentorships = Mentorship.all
   end
@@ -13,10 +15,10 @@ class MentorshipsController < ApplicationController
 
   def create
     @mentorship = Mentorship.new(mentorship_params)
-    @user = User.find(current_user)
+    @user = User.find(current_user.id)
     @mentorship.user = @user
     if @mentorship.save
-      redirect_to mentorship_path(@mentorship)
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -38,7 +40,7 @@ class MentorshipsController < ApplicationController
   def destroy
     @mentorship = Mentorship.find(params[:id])
     @mentorship.destroy
-    redirect_to mentorships_path
+    redirect_to dashboard_path
   end
 
   private
