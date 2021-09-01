@@ -1,0 +1,15 @@
+<%# im the view
+
+controller gives me the bunch of mentorships so i can show them the user
+
+in here, I can see and make use of the instance variable @mentorships
+
+im going to loop through the variable @mentorships and list them %>
+
+<h1>Browse mentorships</h1>
+
+<ul>
+  <% @mentorships.each do |mentorship| %>
+    <li><%= mentorship.subject %></li>
+  <% end %>
+</ul>

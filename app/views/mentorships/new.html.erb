@@ -1,0 +1,7 @@
+<h1>Create a new mentorship</h1>
+
+<%= simple_form_for @mentorship do |f| %>
+  <%= f.input :subject %>
+  <%= f.input :description %>
+  <%= f.submit "Submit mentorship", class: "btn btn-primary" %>
+<% end %>
