@@ -1,0 +1,38 @@
+// Specific CSS for your home-page
+.banner {
+
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  padding: 220px 0;
+  background-image: asset-url('salmen-bejaoui-J5hWP_2Ehas-unsplash.jpg');
+}
+
+.banner h1 {
+  margin: 0;
+  color: rgb(229, 226, 226);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 64px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .8;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-style: italic;
+}
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
