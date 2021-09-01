@@ -1,0 +1,6 @@
+<h1>Apply for a Mentorship</h1>
+
+<%= simple_form_for [@mentorship, @application] do |f| %>
+  <%= f.input :message %>
+  <%= f.submit "Submit Application", class: "btn btn-primary" %>
+<% end %>

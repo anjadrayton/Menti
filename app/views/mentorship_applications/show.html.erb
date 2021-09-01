@@ -1,0 +1,22 @@
+<h1>Application</h1>
+
+<h4><%= @applicant.first_name %> wants to connect!</h4>
+Mentor: <%= @application.mentor.first_name %> <%= @application.mentor.last_name %>
+<br>
+Mentee: <%= @applicant.first_name %> <%= @applicant.last_name %>
+<br>
+Message: <%= @application.message %>
+<br>
+Status: <%= @application.status %>
+<br>
+
+Mentorship Details: <%= @application.mentorship.subject %> <br>
+Details: <%= @application.mentorship.description %>
+<br>
+
+<% if @application.mentor == current_user %>
+
+  <button class = "btn btn-info"><%= link_to "Accept", mentorship_application_path(@application, mentorship_application:{ status: "Accepted"}), method: :patch %></button>
+  <button class = "btn btn-info"><%= link_to "Reject", mentorship_application_path(@application, mentorship_application:{ status: "Denied"}), method: :patch %></button>
+
+<% end %>
