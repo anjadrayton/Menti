@@ -1,5 +1,31 @@
-.container {
+.home-container {
 width: 100%;
-height: auto
+position: absolute;
+top: 150px;
+
+}
+
+
+
+.listinline {
+  display: flex;
+  list-style: none;
+  align-items: baseline;
+  width: 100%;
+  justify-content: space-around;
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+.p-2 {
+ display: flex;
+  align-items: baseline;
+ width: 100%;
+  justify-content: space-evenly
+}
+
+.mb-3 {
+  padding-bottom: 15px;
+  color: grey;
 
 }

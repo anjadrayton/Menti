@@ -1,18 +1,17 @@
 <h1>Application</h1>
 
+<br>
 <h4><%= @applicant.first_name %> wants to connect!</h4>
-Mentor: <%= @application.mentor.first_name %> <%= @application.mentor.last_name %>
+<h4>Mentee: <%= @applicant.first_name %> <%= @applicant.last_name %></h4>
+<h4>Message: <%= @application.message %></h4>
 <br>
-Mentee: <%= @applicant.first_name %> <%= @applicant.last_name %>
 <br>
-Message: <%= @application.message %>
+<h4>Mentor: <%= @application.mentor.first_name %> <%= @application.mentor.last_name %></h4>
+<h4>Mentorship Details: <%= @application.mentorship.subject %> <br></h4>
+<h4>Details: <%= @application.mentorship.description %></h4>
 <br>
-Status: <%= @application.status %>
 <br>
-
-Mentorship Details: <%= @application.mentorship.subject %> <br>
-Details: <%= @application.mentorship.description %>
-<br>
+<h4>Status: <%= @application.status %></h4>
 
 <% if @application.mentor == current_user %>
 
