@@ -1,0 +1,64 @@
+// overview table
+.dashboard-full {
+  margin: 6vh auto;
+  padding: 8vh;
+  background: white;
+  width: 80vw;
+  border-radius: 10px;
+}
+
+.dash-card {
+  background-color: #eaeaff;
+  width: 70%;
+  height: 8em;
+  margin: 1em 2em 1em 0em;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.dash-group {
+  display: flex;
+  justify-content: center;
+}
+
+.dash-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-card {
+  width: 100%;
+}
+
+.top-group {
+  width: 100%;
+}
+// Mentorship table
+
+.full-option-list {
+  padding: 1em;
+  width: 100%;
+  text-align: center;
+}
+
+.full-option-list-item {
+
+}
+
+.headings {
+  padding: 1em;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+td {
+  width: 25%;
+}
+
+#links{
+  color: rgba(128, 128, 128, 0);
+}
+table:hover #links{
+  color: grey;
+}

@@ -1,11 +1,19 @@
-<h1>Mentorship details</h1>
-
-Subject: <%= @mentorship.subject %>
-<br>
-Description: <%= @mentorship.description %>
-<br>
-<% if current_user != @mentorship.user %>
-  <%= link_to "Apply", new_mentorship_mentorship_application_path(@mentorship) %>
+<div class="container">
+  <h1>Mentorship details</h1>
+  Subject: <%= @mentorship.subject %>
   <br>
-<% end %>
-<%= link_to "Dashboard", dashboard_path %>
+  Description: <%= @mentorship.description %>
+  <br>
+  Address: <%= @mentorship.address %>
+  <br>
+  <% if @mentorship.photo.attached? %>
+  <%= cl_image_tag(@mentorship.photo.key,
+        width: 400, height: 300, crop: :fill) %>
+  <% end %>
+  <br>
+  <% if current_user != @mentorship.user %>
+    <%= link_to "Apply", new_mentorship_mentorship_application_path(@mentorship) %>
+    <br>
+  <% end %>
+  <%= link_to "Dashboard", dashboard_path %>
+</div>

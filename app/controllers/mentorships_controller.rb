@@ -2,7 +2,19 @@ class MentorshipsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @mentorships = Mentorship.all
+    if params[:query].present?
+      @mentorships = Mentorship.search_by_subject(params[:query])
+    else
+      @mentorships = Mentorship.all
+    end
+
+    @markers = @mentorships.geocoded.map do |mentorship|
+      {
+        lat: mentorship.latitude,
+        lng: mentorship.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { mentorship: mentorship })
+      }
+    end
   end
 
   def show
@@ -46,6 +58,6 @@ class MentorshipsController < ApplicationController
   private
 
   def mentorship_params
-    params.require(:mentorship).permit(:subject, :description)
+    params.require(:mentorship).permit(:subject, :description, :address, :photo)
   end
 end
