@@ -1,36 +1,97 @@
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a class="nav-link active" id="mentorships-tab" data-toggle="tab" href="#mentorships" role="tab" aria-controls="mentorships" aria-selected="true">Mentorships</a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a class="nav-link" id="created-applications-tab" data-toggle="tab" href="#created-applications" role="tab" aria-controls="created-applications" aria-selected="false">Created Applications</a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a class="nav-link" id="received-applications-tab" data-toggle="tab" href="#received-applications" role="tab" aria-controls="received-applications" aria-selected="false">Received Applications</a>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="mentorships" role="tabpanel" aria-labelledby="mentorships-tab">
-    <%= link_to "Create New Mentorship", new_mentorship_path, class: "btn btn-primary" %>
-    <br><br>
-    <ul>
-      <% @mentorships.each do |mentorship| %>
-        <li><%= mentorship.subject %> <%= link_to "View", mentorship_path(mentorship) %> <%= link_to "Edit", edit_mentorship_path(mentorship) %> <%= link_to 'Delete', mentorship_path(mentorship), method: :delete, data: { confirm: "Are you sure?" } %></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="tab-pane fade" id="created-applications" role="tabpanel" aria-labelledby="created-applications-tab">
-    <ul>
-      <% @created_applications.each do |application| %>
-        <li><%= application.mentorship.subject %> - <%= application.mentor.first_name %> <%= application.mentor.last_name %> - <%= application.status %> <%= link_to "View", mentorship_application_path(application) %> </li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="tab-pane fade" id="received-applications" role="tabpanel" aria-labelledby="received-applications-tab">
-    <ul>
-      <% @received_applications.each do |application| %>
-        <li><%= application.mentorship.subject %> - <%= application.user.first_name %> <%= application.user.last_name %> - <%= application.status %> <%= link_to "View", mentorship_application_path(application) %></li>
-      <% end %>
-    </ul>
+<div class = "dashboard-full">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="false">Overview</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="mentorships-tab" data-toggle="tab" href="#mentorships" role="tab" aria-controls="mentorships" aria-selected="false">Mentorships</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="created-applications-tab" data-toggle="tab" href="#created-applications" role="tab" aria-controls="created-applications" aria-selected="false">Created Applications</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="received-applications-tab" data-toggle="tab" href="#received-applications" role="tab" aria-controls="received-applications" aria-selected="false">Received Applications</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+
+      <br><br>
+      <h2>Welcome back, <%= current_user.first_name %> </h2>
+      <p>Here's what's happening</p>
+      <div class = "dash-cards">
+        <div class = "dash-group top-group">
+          <div class = "dash-card top-card">
+            <h5>Past 7 Days</h5>
+            <ul>
+              <li><p>X New Applications</p></li>
+              <li><p>X New Mentorships</p></li>
+              <li><p>X New Mentors</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class = "dash-group">
+          <div class = "dash-card">
+            <h5>Applications Recieved</h5>
+            <p>X Total</p>
+            <p>X Pending</p>
+          </div>
+          <div class = "dash-card">
+            <h5>Your Mentorships</h5>
+            <p>X Active</p>
+            <p>X Inactive</p>
+          </div>
+          <div class = "dash-card">
+            <h5>Your Mentors</h5>
+            <p>X Mentors</p>
+            <p>X Subjects</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tab-pane fade" id="mentorships" role="tabpanel" aria-labelledby="mentorships-tab">
+      <%# <table class = "headings">
+        <tr class = "headings">
+          <td class = "heading">SUBJECT</td>
+          <td class = "heading">VIEW</td>
+          <td class = "heading">EDIT</td>
+          <td class = "heading">DELETE</td>
+        </tr>
+        <br>
+      </table> %>
+      <table class = "full-option-list">
+        <% @mentorships.each do |mentorship| %>
+          <tr class = "full-option-list-item">
+            <td><%= mentorship.subject %> </td>
+            <td> <a href= <%= mentorship_path(mentorship) %> <p id = "links">View</p></a></td>
+            <td> <a href= <%= edit_mentorship_path(mentorship) %> <p id = "links">Edit</p></a></td>
+
+            <td id = "links"><%= link_to 'delete', mentorship_path(mentorship), method: :delete, data: { confirm: "Are you sure?" } %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br><br><br>
+      <%= link_to "Create New Mentorship", new_mentorship_path, class: "btn btn-primary" %>
+    </div>
+    <!---<td id = "links"><p>edit</p><%# link_to edit_mentorship_path(mentorship) %> </td> --->
+
+
+    <div class="tab-pane fade" id="created-applications" role="tabpanel" aria-labelledby="created-applications-tab">
+      <ul>
+        <% @created_applications.each do |application| %>
+          <li><%= application.mentorship.subject %> - <%= application.mentor.first_name %> <%= application.mentor.last_name %> - <%= application.status %> <%= link_to "View", mentorship_application_path(application) %> </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="tab-pane fade" id="received-applications" role="tabpanel" aria-labelledby="received-applications-tab">
+      <ul>
+        <% @received_applications.each do |application| %>
+          <li><%= application.mentorship.subject %> - <%= application.user.first_name %> <%= application.user.last_name %> - <%= application.status %> <%= link_to "View", mentorship_application_path(application) %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
