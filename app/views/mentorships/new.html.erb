@@ -3,6 +3,7 @@
 <%= simple_form_for @mentorship do |f| %>
   <%= f.input :subject %>
   <%= f.input :description %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Submit mentorship", class: "btn btn-primary" %>
 <% end %>
 <br>
