@@ -13,7 +13,7 @@
   height: 8em;
   margin: 1em 2em 1em 0em;
   border-radius: 10px;
-  padding: 1em;
+  padding: 2%;
 }
 
 .dash-group {
@@ -35,21 +35,25 @@
 }
 // Mentorship table
 
+// table {
+//   padding: 2em 0em 2em 0em;
+// }
+
 .full-option-list {
   padding: 1em;
   width: 100%;
   text-align: center;
+
 }
 
-.full-option-list-item {
-
+.grey a{
+  color: gray;
 }
 
 .headings {
   padding: 1em;
   width: 100%;
   text-align: center;
-  font-weight: bold;
 }
 
 td {
@@ -59,6 +63,28 @@ td {
 #links{
   color: rgba(128, 128, 128, 0);
 }
-table:hover #links{
+.full-option-list:hover #links{
   color: grey;
+}
+
+#mentorships{
+  padding: 2em 0em;
+}
+
+.full-option-list tr:nth-child(odd) td{
+  background-color: rgb(234,234,254);
+}
+#headings {
+  background-color: white;
+}
+
+.bullets {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 3px;
+}
+
+p {
+  margin: 0;
 }
