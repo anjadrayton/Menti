@@ -1,18 +1,20 @@
-<h1>Editing Mentorship Offer</h1>
+<div class="container">
+  <h1>Editing Mentorship</h1>
+  <%= simple_form_for(@mentorship) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= simple_form_for(@mentorship) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="form-inputs">
+      <%= f.input :subject %>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.input :photo, as: :file %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :subject %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
-  </div>
-<% end %>
-<br>
-<%= link_to "Dashboard", dashboard_path %>
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  <br>
+  <%= link_to "Dashboard", dashboard_path %>
+</div>

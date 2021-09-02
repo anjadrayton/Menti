@@ -1,10 +1,13 @@
-<h1>Create a new mentorship</h1>
+<div class="container">
+  <h1>Create a new mentorship</h1>
 
-<%= simple_form_for @mentorship do |f| %>
-  <%= f.input :subject %>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Submit mentorship", class: "btn btn-primary" %>
-<% end %>
-<br>
-<%= link_to "Dashboard", dashboard_path %>
+  <%= simple_form_for @mentorship do |f| %>
+    <%= f.input :subject %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Submit mentorship", class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to "Dashboard", dashboard_path %>
+</div>
