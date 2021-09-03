@@ -1,10 +1,11 @@
 <div class="container">
+  <div class="show-container">
   <h1>Mentorship details</h1>
-  Subject: <%= @mentorship.subject %>
+  <h4>Subject: <%= @mentorship.subject %></h4>
   <br>
-  Description: <%= @mentorship.description %>
+  <h4>Description: <%= @mentorship.description %></h4>
   <br>
-  Address: <%= @mentorship.address %>
+  <h4>Address: <%= @mentorship.address %></h4>
   <br>
   <% if @mentorship.photo.attached? %>
   <%= cl_image_tag(@mentorship.photo.key,
@@ -12,8 +13,8 @@
   <% end %>
   <br>
   <% if current_user != @mentorship.user %>
-    <%= link_to "Apply", new_mentorship_mentorship_application_path(@mentorship) %>
+    <%= link_to "Apply", new_mentorship_mentorship_application_path(@mentorship), class:"btn btn-primary" %>
     <br>
   <% end %>
-  <%= link_to "Dashboard", dashboard_path %>
+  </div>
 </div>
