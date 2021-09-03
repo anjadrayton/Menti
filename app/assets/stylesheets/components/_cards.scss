@@ -1,0 +1,31 @@
+.card {
+  height: 18vh;
+  padding: 15px 25px 15px 25px;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid #e3e3f7;
+  border-width: 1px;
+}
+
+.browse-cards {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.active-storage {
+  background-color: black;
+  width: 30%;
+  margin: auto;
+  height: 80px;
+}
+
+.info {
+  width: 60%;
+}
+
+.browse {
+  margin: 50px auto;
+}
