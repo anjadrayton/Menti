@@ -2,20 +2,26 @@
 <div class="show-container">
 
     <h1>Application</h1>
+    <br>
+    <br>
     <h4><%= @applicant.first_name %> wants to connect!</h4>
-
     <h4>Mentee: <%= @applicant.first_name %> <%= @applicant.last_name %></h4>
     <h4>Message: <%= @application.message %></h4>
+    <br>
+    <br>
     <h4>Mentor: <%= @application.mentor.first_name %> <%= @application.mentor.last_name %></h4>
     <h4>Subject: <%= @application.mentorship.subject %> <br></h4>
     <h4>Details: <%= @application.mentorship.description %></h4>
+    <br>
+    <br>
     <h4>Status: <%= @application.status %></h4>
+    <br>
   <div class="btn-layout">
     <% if @application.mentor == current_user %>
-      <button class ="btn btn-primary"><%= link_to "Accept", mentorship_application_path(@application, mentorship_application:{ status: "Accepted"}), method: :patch %></button>
-      <button class ="btn btn-danger"><%= link_to "Reject", mentorship_application_path(@application, mentorship_application:{ status: "Denied"}), method: :patch %></button>
+      <%= link_to "Accept", mentorship_application_path(@application, mentorship_application:{ status: "Accepted"}), class:"btn btn-primary", method: :patch %>
+      <%= link_to "Reject", mentorship_application_path(@application, mentorship_application:{ status: "Denied"}), class:"btn btn-danger", method: :patch %>
     <% end %>
   </div>
 </div>
-    <button class ="btn-gradient"><%=link_to "Dashboard", dashboard_path %>
+
 </div>
