@@ -8,11 +8,11 @@
 
 .search-btn {
   position: absolute;
-  // top: 8px;
-  // bottom: 8px;
-  // right: 8px;
-  bottom: 61%;
-  right: 8%;
+
+  // bottom: 15%;
+  // right: 1%;
+  bottom: 62%;
+  right: 7%;
   width: 110px;
 }
 
@@ -21,4 +21,9 @@
   height: 3.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
+}
+
+#map {
+  position: sticky;
+  top: 20px;
 }
