@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container cont-show">
   <div class="show-container">
   <h1>Mentorship details</h1>
+  <br>
   <h4>Subject: <%= @mentorship.subject %></h4>
   <br>
   <h4>Description: <%= @mentorship.description %></h4>
@@ -13,7 +14,7 @@
   <% end %>
   <br>
   <% if current_user != @mentorship.user %>
-    <%= link_to "Apply", new_mentorship_mentorship_application_path(@mentorship), class:"btn btn-primary" %>
+    <%= link_to "Apply", new_mentorship_mentorship_application_path(@mentorship), class:"btn btn-primary mt-4" %>
     <br>
   <% end %>
   </div>
