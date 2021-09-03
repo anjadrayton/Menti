@@ -1,0 +1,42 @@
+.show-container {
+    display: list-item;
+    height: 369px;
+    width: 370px;
+    text-align: center;
+    justify-content: center;
+    margin-left: 661px;
+    list-style: none;
+    background-color: #eeeff0;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.btn-layout {
+  display: flex;
+    padding-left: 80px;
+}
+
+
+.btn-btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #f84242;
+  transition: background 0.3s ease;
+}
+
+.btn-btn-flat:hover {
+  background: #af422f;
+  color: white;
+}

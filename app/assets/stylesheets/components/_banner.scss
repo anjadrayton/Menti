@@ -3,8 +3,8 @@
 
   background-size: cover;
   background-position: center;
-  height: auto;
-  padding: 220px 0;
+  height: 550px;
+  padding: 220px 102px;
   background-image: asset-url('salmen-bejaoui-J5hWP_2Ehas-unsplash.jpg');
 }
 
@@ -14,15 +14,20 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 64px;
   font-weight: bold;
+  margin-bottom: 22px;
+  margin-top: 70px;
+
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 26px;
   color: white;
   opacity: .8;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-style: italic;
+  margin-left: 109px;
 }
+
 .btn-ghost {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
@@ -31,6 +36,7 @@
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+  margin-left: 205px;
 }
 
 .btn-ghost:hover {
