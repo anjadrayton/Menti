@@ -14,11 +14,11 @@ Stack
 Hosted on
 * Heroku
 
-API integrated
+API's
 * Mapbox
 * Cloudinary (for active storage)
 
-Gems
+Gem
 * Devise (for authentication)
 
 Front-end
