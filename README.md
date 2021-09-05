@@ -16,10 +16,10 @@ Hosted on
 
 API integrated
 * Mapbox
+* Cloudinary (for active storage)
 
 Gems
 * Devise (for authentication)
-* Cloudinary (for active storage)
 
 Front-end
 * Bootstrap
