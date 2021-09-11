@@ -1,4 +1,4 @@
-# Mentors R Us
+# Menti
 Visit the site at mentors-r-us.herokuapp.com
 
 Created by @anjadrayton, @aaronwlw and @Chaddy35 as part of @lewagon bootcamp.
