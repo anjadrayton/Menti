@@ -1,5 +1,5 @@
 # Menti
-Still a work in progress but feel free to visit the site mentors-r-us.herokuapp.com
+Still a work in progress but feel free to visit the site https://mentiapp.herokuapp.com/mentorships
 
 Created by @anjadrayton, @aaronwlw and @Chaddy35 as part of @lewagon bootcamp.
 
