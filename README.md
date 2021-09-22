@@ -1,5 +1,5 @@
 # Menti
-Design and front-end still in progress, but feel free to visit the livesite https://mentiapp.herokuapp.com/mentorships
+Design and front-end still in progress but feel free to visit the livesite https://mentiapp.herokuapp.com/mentorships
 
 Created by @anjadrayton, @aaronwlw and @Chaddy35 as part of @lewagon bootcamp.
 
@@ -31,4 +31,4 @@ Mentees can search for mentors by location through the search function on Browse
 Mentors can manage their mentorships and applications through the dashboard overview feature.
 
 # Walkthrough
-Video demo coming soon
+Walkthrough video coming soon
